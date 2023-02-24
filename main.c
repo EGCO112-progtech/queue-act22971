@@ -14,18 +14,32 @@ int main(int argc , char **argv) {
    q.tailPtr=NULL;
    q.size=0;
 
-   int i,x;
+   int i,x,y=1;//x=ราคาที่ต้องจ่าย  y=คิวลูกค้า
    
 
  for(i=1;i<argc;i++){
         if(strcmp(argv[i],"x")==0){
-            x=dequeue_struct(&q); 
-            printf("dequeing %d\n",x);
+           printf("Customer No: %d\n",y);
+            dequeue_struct(&q);
+          y++;
         }
         else {
-       enqueue_struct(&q, atoi(argv[i]));
-           
+       enqueue_struct(&q, atoi(argv[i]), atoi(argv[i+1]));
+           i++;
         }
  }
+   printf("===========================================================\n");
+  if(q.size!=0) {
+    if(q.size==1)printf("There is %d customers left in the queue\n",q.size);
+    else printf("There are %d customers left in the queue\n",q.size);
+    }
   return 0;
 }
+/*Instruction
+1.Ramen 100 Baht
+
+2.Somtum 20 Baht
+
+3.Fried Chicken 50 Baht
+
+*/
