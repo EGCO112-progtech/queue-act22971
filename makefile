@@ -1,4 +1,4 @@
 argument: main.c 
-	gcc main.c -o Q
-run: Q
-	./Q
+	gcc main.c -o q
+run: q
+	./q
