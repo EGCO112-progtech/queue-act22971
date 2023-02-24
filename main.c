@@ -32,7 +32,9 @@ int main(int argc , char **argv) {
   if(q.size!=0) {
     if(q.size==1)printf("There is %d customers left in the queue\n",q.size);
     else printf("There are %d customers left in the queue\n",q.size);
-    }
+    } if(q.size==0)printf("There is no one left\n");
+  
+  dequeue_all(&q);
   return 0;
 }
 /*Instruction
@@ -41,5 +43,5 @@ int main(int argc , char **argv) {
 2.Somtum 20 Baht
 
 3.Fried Chicken 50 Baht
-
+./q 1 2 3 2 x 3 2 x
 */
